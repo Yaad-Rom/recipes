@@ -1,0 +1,80 @@
+h1, .panel-title {
+  font-family: 'Shuneet', serif;
+  text-align: center;
+}
+
+h1{
+  font-size: 60px;
+}
+
+.panel-title {
+  background-color: rgb(198, 191, 216);
+  font-size: 25px;
+  color: rgb(96, 26, 43);
+  font-weight: 500;
+}
+
+.list-group-item {
+  list-style-type: none;
+  font-size: 22px;
+  font-family: 'Shuneet', serif;
+  text-align: center;
+}
+
+.list-group-item-pressed {
+  list-style-type: none;
+  font-size: 22px;
+  font-family: 'Shuneet', serif;
+  text-align: center;
+  /*background: lightgreen;*/
+  background: #ec9999;
+  padding: 10px;
+}
+
+
+.images {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bigImage {
+  border-radius: 4px;
+  padding: 5px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+}
+
+.jumbotron{
+  font-family: 'Shuneet', serif;
+  color: rgb(96, 26, 43);
+  font-size:60%;
+}
+
+.jumbotron .ingredient {
+  font-family: 'Shuneet', serif;
+  font-size:120%;
+}
+
+.badge {
+  padding: 1px 9px 2px;
+  font-size: 12.025px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  background-color: #3a87ad;
+}
+
+.btn-group{
+  padding: 5px;
+}
