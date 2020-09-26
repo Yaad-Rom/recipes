@@ -43,19 +43,20 @@ class Recipe extends React.Component {
         recCopy[index1].ingredients[index2][1] = !recCopy[index1].ingredients[index2][1];
         this.setState({recipes: recCopy})
         if (this.state.redCollapsed[index1])
-            this.hidePressedIngredients(index1);
+            this.hidePressedIngredients(index1, false);
     }
 
-    hidePressedIngredients(index1) {
+    hidePressedIngredients(index1, changeRedCollapsed) {
+        console.log("hiding");
         let recCopy = this.state.recipes.slice();
         recCopy[index1].ingredients = recCopy[index1].ingredients.filter(item => item[1]);
         if (recCopy[index1].ingredients.length === 0) {
-            let redCol = this.state.redCollapsed.slice();
-            redCol[index1] = !redCol[index1];
-            this.setState({redCollapsed: redCol});
-            this.showAllIngredients(index1);
-        } else
+            this.resetChoice(index1);
+        } else{
             this.setState({recipes: recCopy});
+            if (changeRedCollapsed)
+                this.changeRedCollapsed(index1);
+        }
     }
 
     resetChoice(index1) {
@@ -66,6 +67,7 @@ class Recipe extends React.Component {
     }
 
     showAllIngredients(index1) {
+        console.log("showing");
         let recCopy = this.state.recipes.slice();
         let missing_items_indices = [];
         var i;
@@ -77,16 +79,21 @@ class Recipe extends React.Component {
             recCopy[index1].ingredients[missing_items_indices[i]][1] = !recCopy[index1].ingredients[missing_items_indices[i]][1];
         }
         this.setState({recipes: recCopy});
+        this.changeRedCollapsed(index1);
     }
 
     filterIngredients(index1) {
-        let redCol = this.state.redCollapsed.slice();
-        redCol[index1] = !redCol[index1];
         if (!this.state.redCollapsed[index1]) {
-            this.hidePressedIngredients(index1);
+            this.hidePressedIngredients(index1, true);
         } else {
             this.showAllIngredients(index1);
         }
+    }
+
+    changeRedCollapsed(index1) {
+        let redCol = this.state.redCollapsed.slice();
+        console.log(redCol[index1]);
+        redCol[index1] = !redCol[index1];
         this.setState({redCollapsed: redCol});
     }
 
