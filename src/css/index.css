@@ -31,6 +31,13 @@ h1{
   padding: 10px;
 }
 
+.smallImages {
+  padding: 5px;
+  width: 46px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .images {
   border: 1px solid #ddd;
